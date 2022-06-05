@@ -1,0 +1,112 @@
+.navbar  {
+    z-index: 3;
+    background: rgb(150, 149, 172);
+background: linear-gradient(180deg, rgba(6,0,209,1) 11%, rgba(69,78,115,1) 45%, rgba(11,0,13,1) 100%);
+}
+.navbar a{
+    color: rgb(240, 248, 255);
+}
+.navbar-brand{
+        font-size: 200%;
+}
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.25rem;
+    background: rgb(5,88,130);
+    background: linear-gradient(180deg, rgba(5,88,130,1) 9%, rgba(6,119,81,1) 23%, rgba(70,2,83,1) 64%, rgba(11,0,13,1) 92%);
+}
+.linkredes img{
+    width: 10%;
+}
+                                          /*index*/
+#galeria .img-fluid { 
+ width: 100%; 
+  height:20rem;
+ transition: 1s ease-out;
+}     
+#galeria img:hover{
+  transform: scale(1.2);
+}        
+.artcimg {
+    width: 100%;
+}
+.columna{
+    z-index: 1;
+    padding: .6rem;
+}
+.columna h2{
+    color: rgb(199, 218, 236);
+    font-size: 1.95rem;
+    margin: 2rem 1px 3rem 1px; 
+}
+.columna li{
+    list-style: lower-roman;
+    background: rgba(241, 186, 124, 0.878);
+    padding: 2rem 1rem;
+    list-style:none ;
+}
+.post1, .post3, .post5, .post7, .post9{
+    transform: rotate(3deg);
+}
+.post2, .post4, .post6, .post8{
+    transform: rotate(-3deg);
+}
+
+.contenedor_estado{
+      background-color: rgba(197, 224, 247, 0.612);
+}
+.contenedor_estado img{
+    width: 100%;
+    height: 23rem;
+}
+.img_dia_muertos , .img_posadas{ 
+    width: 49% ;
+    height:25rem;
+}
+.dia_muertos, .posadas { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1px;
+    padding: 1px;
+    }
+    .dia_muertos h2 , .posadas h2 {
+        font-size: 3rem;
+        width: 100%;
+        text-align: center;
+    }
+                                                  /*mediasindex*/ 
+    @media screen and (max-width:768px) {                  
+        #galeria img{
+        }
+        }
+        @media screen and (max-width:576px) {
+            #galeria img{
+                height: 10rem;
+            }
+            }
+
+@media screen and (max-width:768px) {                  /*mediascreenestados*/          
+    .contenedor_estado img{
+        height: 15rem;
+    }
+    
+}
+@media screen and (max-width:576px) {
+    .contenedor_estado img{
+        height: 10rem;
+    }
+}
+                                                                      /*mediascreenlugares*/
+@media screen and (max-width:768px) {                  
+.img_dia_muertos, .img_posadas{
+    height: 15rem;
+}
+
+}
+@media screen and (max-width:576px) {
+.img_dia_muertos, .img_posadas{
+    height: 10rem;
+}
+}                                                              
