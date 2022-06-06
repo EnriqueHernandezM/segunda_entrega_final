@@ -1,3 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}                                     /*general*/
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.25rem;
+    background: rgb(5,88,130);
+    background: linear-gradient(180deg, rgba(5,88,130,1) 9%, rgba(6,119,81,1) 23%, rgba(70,2,83,1) 64%, rgba(11,0,13,1) 92%);
+    z-index: 1;
+}
 .navbar  {
     z-index: 3;
     background: rgb(150, 149, 172);
@@ -7,33 +19,132 @@ background: linear-gradient(180deg, rgba(6,0,209,1) 11%, rgba(69,78,115,1) 45%, 
     color: rgb(240, 248, 255);
 }
 .navbar-brand{
-        font-size: 200%;
+        padding-left: 1rem;
+        font-size: 175%;
+        -webkit-animation: scale-up-hor-left 0.9s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.2s both;
+	        animation: scale-up-hor-left 0.9s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.2s both;
 }
-body{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.25rem;
-    background: rgb(5,88,130);
-    background: linear-gradient(180deg, rgba(5,88,130,1) 9%, rgba(6,119,81,1) 23%, rgba(70,2,83,1) 64%, rgba(11,0,13,1) 92%);
-}
+ @-webkit-keyframes scale-up-hor-left {
+    0% {
+      -webkit-transform: scaleX(0.4);
+              transform: scaleX(0.4);
+      -webkit-transform-origin: 0% 0%;
+              transform-origin: 0% 0%;
+    }
+    100% {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+      -webkit-transform-origin: 0% 0%;
+              transform-origin: 0% 0%;
+    }
+  }
+  @keyframes scale-up-hor-left {
+    0% {
+      -webkit-transform: scaleX(0.4);
+              transform: scaleX(0.4);
+      -webkit-transform-origin: 0% 0%;
+              transform-origin: 0% 0%;
+    }
+    100% {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+      -webkit-transform-origin: 0% 0%;
+              transform-origin: 0% 0%;
+    }
+  }
 .linkredes img{
     width: 10%;
 }
-                                          /*index*/
-#galeria .img-fluid { 
- width: 100%; 
-  height:20rem;
- transition: 1s ease-out;
+                            /*index*/
+.grilla_index{
+display: grid;
+grid-template-columns: 34% 34% 32% ;
+grid-template-rows: repeat (6,auto);
+grid-template-areas:"artbienvenida artbienvenida artbienvenida"
+                    "imgsprincipales imgsprincipales imgsprincipales"
+                    "video video columna"
+                    "carta1 carta2 columna"
+                    "carta1 carta2 columna"
+                    "carta3 carta3 columna"                  
+;       
+row-gap: 5px;  
+column-gap: 7px; 
+justify-content: center;           
+justify-items: center;
+align-items: center;
+}                                                                                                      
+.artbienvenidaindex{
+    grid-area: artbienvenida;
+    padding: 2rem; 
+    font-size: 1.25rem;
+    width: 97%;
+}
+.artbienvenidaindex h2{
+    font-size: 2.25rem;
+    text-align: center;
+    padding: .45rem;
+}
+.artbienvenidaindex p{
+    padding: .50rem;
+}
+.imgs_principales_cont{
+    grid-area: imgsprincipales;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+        width: 100%; 
+    justify-content: center;       
+}
+.imgs_principales{
+    width:30% ;
+    height:21rem;
+    transition: 1s ease-out;
 }     
-#galeria img:hover{
-  transform: scale(1.2);
+.imgs_principales:hover{
+    transform: scale(1.2);
 }        
-.artcimg {
+.video_1{
+    grid-area: video ;
+    padding: 1rem;
+    width: 70%;
+} 
+.articulo_1index{
+    grid-area: carta1;
+    background-color:rgba(154, 134, 134, 0.485) ;
+    align-self: start;
+} 
+.articulo_2index {
+    grid-area: carta2;
+    background-color:rgba(154, 134, 134, 0.485) ; 
+    align-self: start;
+}
+.articulo_2index a:visited{
+    color:rgba(138, 130, 55, 0.892)
+}
+.articulo_2index img{
+    width: 23rem;
+    padding: .5rem;
     width: 100%;
 }
-.columna{
-    z-index: 1;
-    padding: .6rem;
+.articulo_1index h2, .articulo_2index h2 {
+    padding: .7rem;
+    font-size: 1.80rem; 
 }
+.articulo_3index{
+    grid-area: carta3;
+    background-color:rgba(154, 134, 134, 0.485) ; 
+   
+    align-self: center;
+}
+.columna{
+    grid-area: columna;
+    justify-self: end;
+    align-self:stretch ;
+    padding: 1.6rem;
+}
+.columna ol {
+    padding: 0rem;
+  }
 .columna h2{
     color: rgb(199, 218, 236);
     font-size: 1.95rem;
@@ -41,7 +152,7 @@ body{
 }
 .columna li{
     list-style: lower-roman;
-    background: rgba(241, 186, 124, 0.878);
+    background: rgba(241, 186, 124, 0.941);
     padding: 2rem 1rem;
     list-style:none ;
 }
@@ -50,63 +161,96 @@ body{
 }
 .post2, .post4, .post6, .post8{
     transform: rotate(-3deg);
+}                                                            /*ecosistemas*/
+#contenedor_ecosistemas img{ 
+    height: 22rem;
 }
-
-.contenedor_estado{
-      background-color: rgba(197, 224, 247, 0.612);
+#contenedor_ecosistemas h5{
+    font-size: 175%;
 }
-.contenedor_estado img{
-    width: 100%;
-    height: 23rem;
+.contenedor_carousel {
+    padding-top:5.50rem;
 }
-.img_dia_muertos , .img_posadas{ 
-    width: 49% ;
-    height:25rem;
+.contenedor_carousel img{
+    height: 21rem;
 }
-.dia_muertos, .posadas { 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 1px;
-    padding: 1px;
-    }
-    .dia_muertos h2 , .posadas h2 {
-        font-size: 3rem;
-        width: 100%;
-        text-align: center;
-    }
-                                                  /*mediasindex*/ 
-    @media screen and (max-width:768px) {                  
-        #galeria img{
-        }
-        }
-        @media screen and (max-width:576px) {
-            #galeria img{
-                height: 10rem;
-            }
-            }
-
-@media screen and (max-width:768px) {                  /*mediascreenestados*/          
-    .contenedor_estado img{
-        height: 15rem;
-    }
-    
+                                                    /*adaptable INDEX* 992px*/
+@media screen and (max-width:992px) {
+.grilla_index {
+grid-template-columns: 50% 50%;
+grid-template-areas:  "artbienvenida artbienvenida"
+                        "imgsprincipales imgsprincipales "
+                        "video video"
+                        "carta1 columna"
+                        "carta2 columna"
+                        "carta3 columna"
+;      
 }
-@media screen and (max-width:576px) {
-    .contenedor_estado img{
-        height: 10rem;
-    }
-}
-                                                                      /*mediascreenlugares*/
-@media screen and (max-width:768px) {                  
-.img_dia_muertos, .img_posadas{
-    height: 15rem;
-}
-
-}
-@media screen and (max-width:576px) {
-.img_dia_muertos, .img_posadas{
+.imgs_principales{
+width: 33%;
+height: 17rem;
+}  
+}                                                           /*adaptable INDEX 576*/
+@media screen and  (max-width:576px){
+.grilla_index{
+grid-template-columns: 50% 50%;
+grid-template-areas:  "artbienvenida artbienvenida"
+                        "imgsprincipales imgsprincipales "
+                        "video video"
+                        "carta1 columna"
+                        "carta2 columna"
+                        "none columna"  
+                        "carta3 carta3 "                      
+; 
+}   
+.imgs_principales {
+    width:40% ;
     height: 10rem;
 }
-}                                                              
+.columna li{   
+padding: 1rem .5rem;
+margin: .5rem 1px .5rem 1px;
+}
+}                                              /*adaptable INDEX 320*/
+@media screen and  (max-width:320px){
+.grilla_index{
+grid-template-columns: 100%;
+grid-template-areas:  
+                        "artbienvenida"
+                        "imgsprincipales"
+                        "video"
+                        "carta1"
+                        "carta2"
+                        "columna"
+                        "carta3"                   
+;      
+}
+.artbienvenidaindex{
+padding: 1rem; 
+font-size: 1.rem;
+width: 100%;
+}
+.imgs_principales{
+width:45%;
+height: 7rem;
+}
+.video_1{
+padding: .25rem;
+height: 12rem;
+}
+}                                                                       /*s=adaptable ecosistemas 992*/
+@media screen and (max-width:992px) {
+    #contenedor_ecosistemas  {
+        padding-top: 5rem;
+    }   
+}                                                                         /*s=adaptable ecosistemas 576*/
+@media screen and (max-width:576px) {
+    #contenedor_ecosistemas  {
+       padding-top: 7rem;
+    }
+}                                                              /*s=adaptable ecosistemas 320*/
+@media screen and (max-width:320px) {
+    #contenedor_ecosistemas  {
+        padding-top: 8rem;
+    }
+}
